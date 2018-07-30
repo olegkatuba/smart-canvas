@@ -1,0 +1,27 @@
+{
+  "name": "prof-orientation",
+  "version": "1.0.0",
+  "description": "prof-orientation",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "dev:log": "set DEBUG=express:* & nodemon index"
+  },
+  "engines": {
+    "node": "8.9.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "brain.js": "^1.2.4",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  },
+  "author": "Oleg",
+  "license": "ISC"
+}

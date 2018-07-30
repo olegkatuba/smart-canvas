@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Neural Canvas</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<main>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <fieldset>
+        <button class="btn danger" onclick="clearCanvas()">Clear</button>
+        <button class="btn primary" onclick="submit(getArea())">Submit</button>
+        <button class="btn warning" onclick="train(getArea(), document.getElementById('isTrain').value)">Train</button>
+        <input id="isTrain">
+        <button class="btn danger" onclick="save()">Save</button>
+    </fieldset>
+</main>
+<script src="index.js"></script>
+</body>
+</html>
