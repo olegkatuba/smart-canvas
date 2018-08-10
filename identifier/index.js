@@ -29,21 +29,12 @@ class Identifier {
 
     save() {
         this.net = new brain.NeuralNetwork();
-        Symbol.find()
+        return Symbol.find()
             .lean()
             .then(data => {
-                this.data = data;// .map(i => ({input: i.input, output: i.output}))
-                this.net.trainAsync(this.data)
-                    .then(() => {
-                        console.log('trained');
-                    })
-                    .catch(() => {
-                        console.log('error');
-                    });
-            })
-        /*require('fs').writeFile('./identifier/data.json', JSON.stringify(this.data), (err, data) => {
-            err ? console.log('err') : console.log('saved');
-        });*/
+                this.data = data;
+                return this.net.trainAsync(this.data);
+            });
     }
 
     identify(data) {

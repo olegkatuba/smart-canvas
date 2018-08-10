@@ -4,9 +4,6 @@ let identifier = require('./identifier');
 
 let app = express();
 
-/*app.set('views', './views');
-app.set("view engine", "hbs");*/
-
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "/public"));
@@ -23,8 +20,13 @@ app.post('/identify', (req, res) => {
 });
 
 app.get('/save', (req, res) => {
-    identifier.save();
-    res.send('saved');
+    identifier.save()
+        .then(() => {
+            res.send('trained');
+        })
+        .catch(() => {
+            res.send('error');
+        });
 });
 
 module.exports = app;
